@@ -12,8 +12,8 @@ app.use(express.json());
 const pool = new Pool({
   user: 'postgres',
   host: 'localhost',
-  database: 'another_db',
-  password: 'abhi@004',
+  database: process.env.DB_NAME,
+  password: process.env.DB_PASS,
   port: 5432,
 });
 
@@ -275,3 +275,4 @@ app.listen(port, () => {
   console.log(`🚀 Server running on http://192.168.1.12:${port}`);
   console.log(`🌐 Mobile: http://192.168.1.12:${port}`);
 });
+
